@@ -194,12 +194,12 @@ class PhysicsData {
 
     //----------------------------------------------------------------------
 
-    static function init() {
+    public static function init() {
         bodies = new Map<String,PhysBodyType>();
 
         {% for body in bodies %}
             var body = new Body();
-            cbtype(body.cbTypes, "{{body.cbType}}");
+            cbtype(body.cbTypes, "{{body.cbTypes}}");
 
             {% for fixture in body.fixtures %}
                 var mat = material("{{fixture.material}}");
